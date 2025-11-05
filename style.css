@@ -36,3 +36,26 @@ li {
     padding: 0 10px;
   }
 }
+
+.fotball-div {
+  width: 720px;
+  height: 220px;
+
+  margin-left: 185px;
+
+  border-width: 2px;
+  border-radius: 37px;
+
+  background-color: #5abb58;
+
+  border-color: #000000;
+}
+.num-random-section {
+  margin-left: 257px;
+}
+
+.fotball-text {
+  margin-top: 36px;
+  margin-left: 508px;
+  margin-bottom: 36px;
+}
