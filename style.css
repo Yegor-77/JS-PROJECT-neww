@@ -2,7 +2,7 @@
     #game {
       position: relative;
       width: 100vw;
-      height: 200px;
+      height: 350px;
       border-bottom: 2px solid #535353;
       overflow: hidden;
     }
