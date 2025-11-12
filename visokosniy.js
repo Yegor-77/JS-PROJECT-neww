@@ -3,7 +3,7 @@ const button = document.querySelector(".visokosniy-button");
 const result = document.querySelector(".visokosniy-p");
 
 button.addEventListener("click", () => {
-  const year = parseInt(input.value); 
+  const year = parseInt(input.value);
 
   if (!year) {
     result.textContent = "Будь ласка, введіть рік!";
@@ -22,20 +22,6 @@ button.addEventListener("click", () => {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const dino = document.getElementById("dino");
 // const game = document.getElementById("game");
 // const scoreEl = document.getElementById("score");
@@ -48,13 +34,6 @@ button.addEventListener("click", () => {
 // let speed = 6;
 // let cactusInterval;
 
-
-
-
-
-
-
-
 // function jump() {
 //   if (isJumping || isGameOver) return;
 //   isJumping = true;
@@ -64,10 +43,6 @@ button.addEventListener("click", () => {
 //     isJumping = false;
 //   }, 600);
 // }
-
-
-
-
 
 // function createCactus() {
 //   if (isGameOver) return;
@@ -86,9 +61,6 @@ button.addEventListener("click", () => {
 //     right += speed;
 //     cactus.style.right = right + "px";
 
-
-    
-
 //     const dinoRect = dino.getBoundingClientRect();
 //     const cactusRect = cactus.getBoundingClientRect();
 
@@ -100,7 +72,6 @@ button.addEventListener("click", () => {
 //     ) {
 //       gameOver();
 //     }
-
 
 //     if (right > window.innerWidth + 50) {
 //       cactus.remove();
