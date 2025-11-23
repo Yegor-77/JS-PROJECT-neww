@@ -1,78 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.header-container {
+  display: flex;
+}
+
+.num-random-section {
+  margin-top: 72px;
+}
+.calc {
+  margin-bottom: 36px;
+
+  margin-top: 36px;
+}
+.calc-timer {
+  margin-bottom: 36px;
+
+  margin-top: 36px;
+}
+.Footbal-section {
+  margin-bottom: 36px;
+
+  margin-top: 36px;
+}
+.main-section-game {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+.game-title {
+  margin-left: 460px;
+  padding-top: 30px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.rps-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.rps-btn {
+  width: 90px;
+  height: 90px;
+  border: none;
+  border-radius: 20px;
+  background: #210000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.rps-btn:hover {
+  transform: scale(1.1);
+}
+
+.rps-btn img {
+  width: 55px;
+}
+
+.result-text {
+  margin-top: 25px;
+  font-size: 18px;
+  height: 24px;
+}
+
+.computer-choice {
+  margin-top: 20px;
+  border: none;
+  background: #210000;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 3px 5px #0002;
+}
+
+.score-block {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  text-align: right;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.main {
+  background-size: cover;
+  background: url(./img/fontsize.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.popular-text {
+  margin-left: 350px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+.visokosniy-text {
+  margin-left: 376px;
+}
 #game {
   position: relative;
-
-    #game {
-      position: relative;
-      width: 100vw;
-      height: 350px;
-      border-bottom: 2px solid #535353;
-      overflow: hidden;
-    }
-    #dino {
-      position: absolute;
-      bottom: 0;
-      left: 100px;
-      width: 40px;
-      height: 45px;
-      background: url(./img/minion.gif) no-repeat;
-      background-size: contain;
-      transition: bottom 0.3s ease;
-    }
-    #dino.jump {
-      bottom: 80px;
-    }
-    .cactus {
-      position: absolute;
-      bottom: 0;
-      width: 20px;
-      height: 40px;
-      background-size: 20px 40px;
-      background: url(./img/kaktyc.jpg) no-repeat;
-      background-size: contain;
-      
-    }
-    #ground {
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background: #535353;
-    }
-    #score {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 20px;
-      color: #535353;
-    }
-    #game-over {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 30px;
-      color: #535353;
-      display: none;
-      text-align: center;
-    }
-    #restart {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-  height: 200px;
+  width: 100vw;
+  height: 350px;
   border-bottom: 2px solid #535353;
   overflow: hidden;
 }
 #dino {
   position: absolute;
   bottom: 0;
-  left: 50px;
+  left: 100px;
   width: 40px;
   height: 45px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45"><path fill="%23535353" d="M10 25h5v15h5V25h5v-5h-5v-5h-5v5H10v5zm15-15h5v5h5v5h-5v15h-5V20h-5v-5h5v-5z"/></svg>')
-    no-repeat;
+  background: url(./img/minion.gif) no-repeat;
   background-size: contain;
   transition: bottom 0.3s ease;
 }
@@ -84,12 +151,12 @@
   bottom: 0;
   width: 20px;
   height: 40px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" viewBox="0 0 20 40"><path fill="%23535353" d="M8 0h4v30h4v5h-4v5h-4v-5H4v-5h4V0z"/></svg>')
-    no-repeat;
+  background-size: 20px 40px;
+  background: url(./img/kaktyc.jpg) no-repeat;
   background-size: contain;
 }
 #ground {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   height: 2px;
@@ -118,99 +185,400 @@
   font-size: 18px;
   cursor: pointer;
 }
-* {
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-}
-ul {
-  list-style: none;
-}
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-li {
-  margin: 0;
-  padding: 0;
+
+.wrapper {
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-h2 {
-    margin-bottom: 20px;
+.pexeso {
+  width: 500px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
 }
 
-.calc {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.card {
+  width: 100%;
+  height: 120px;
+  background: #dcdcdc;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
 }
 
-input {
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: none;
-    background: #ddd;
-    text-align: center;
-    font-size: 16px;
-    outline: none;
+.card.open {
+  background: black;
+  color: white;
 }
 
-.buttonss {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.card.matched {
+  background: limegreen;
+  color: white;
+  cursor: default;
 }
 
-.znak {
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.2s;
+.btns {
+  width: 900px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 8px 20px;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #444;
+  background: #444;
+}
+
+.random-text {
+  margin-left: 370px;
+}
+#output {
+  width: 600px;
+  margin: 20px auto;
+  font-size: 16px;
+  background: #efefef;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+.foot-line {
+  position: absolute;
+}
+.footer-left {
+  padding-top: 61px;
+  padding-bottom: 75px;
+}
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo {
+  width: 80px;
+}
+
+.footer-title h3 {
+  font-size: 22px;
+}
+
+.footer-right {
+  padding-top: 97px;
+}
+.footer-title p {
+  margin-left: 50px;
+  font-size: 16px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer-line {
+  padding-top: 61px;
+}
+.footer-center p {
+  margin: 4px 0;
+  margin-left: 200px;
+  font-size: 15px;
+}
+
+.email-input {
+  width: 220px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: #e6e6e6;
+  margin-bottom: 10px;
+}
+
+.subscribe-btn {
+  padding: 10px 25px;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.sub-note {
+  font-size: 11px;
+  color: #555;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.head-text {
+  margin: 0 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.head-p {
+  margin: 0;
+  font-size: 14px;
+  margin-left: 19px;
+
+  position: absolute;
+}
+
+.head-line {
+  display: flex;
+  gap: 30px;
+  margin-left: 80px;
+}
+
+.header-lines {
+  margin-left: 50px;
+  font-size: 16px;
+}
+
+.header-lines:hover {
+  color: #ff4d4d;
+}
+.head-limne {
+  margin-right: 340px;
+}
+.head-conected {
+  margin-left: 51px;
+  font-size: 16px;
+}
+
+.header img:last-child {
+  width: 40px;
+}
+
+.fotball-div {
+  width: 720px;
+  height: 220px;
+
+  margin-left: 185px;
+
+  border-width: 2px;
+  border-radius: 37px;
+
+  background-color: #5abb58;
+
+  border-color: #000000;
+}
+
+.fotball-text {
+  margin-top: 36px;
+  margin-left: 508px;
+  margin-bottom: 36px;
+}
+
+.hhtext {
+  margin-left: 490px;
+  margin-bottom: 20px;
+}
+.chill-calc {
+  margin-left: 480px;
+}
+.calc {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+button {
+  padding: 20px 30px;
+}
+.random-input {
+  margin-left: 240px;
+}
+
+.team-section h2 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+.team-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.team-member-slider {
+  width: 260px;
+  overflow: hidden;
+}
+
+.team-member {
+  display: none;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.team-member.active {
+  display: block;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  background: #d8d8d8;
+  border-radius: 15px;
+  margin: 0 auto 10px;
+}
+
+.image-slider {
+  width: 260px;
+  height: 260px;
+  margin: 20px auto 10px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  background: #cfcfcf;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #555;
+}
+
+input {
+  margin-top: 36px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: #ddd;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+.buttonss {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.znak {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #444;
 }
 
 #equal {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background: #000;
-    color: #fff;
-    font-size: 18px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+}
+.choose-scientist {
+  padding-top: 80px;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 36px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.scientists {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.section-btn {
+  font-family: "Montserrat Alternates", sans-serif;
+  padding: 10px 20px;
+  font-size: 12px;
+  border: none;
+  height: 35px;
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #000000;
+  box-shadow: 0px 2px 2px 0px #bdbdbdcb;
+  cursor: pointer;
+}
+
+.cs-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }

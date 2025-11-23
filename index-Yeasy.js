@@ -1,4 +1,4 @@
-const randomInput = document.querySelector(".random-inpute");
+const randomInput = document.querySelector(".random-input");
 const randomButton = document.querySelector(".random-button");
 const randomResult = document.querySelector(".result-random");
 
@@ -22,6 +22,7 @@ randomButton.addEventListener("click", () => {
     randomResult.textContent = ` Ви програли, комп’ютер загадав ${randomNumber}.`;
     randomResult.style.color = "red";
     console.log("you Looser");
+    console.log(userNumber);
   }
 });
 
