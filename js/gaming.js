@@ -1,104 +1,17 @@
-const dino = document.getElementById("dino");
-const game = document.getElementById("game");
-const scoreEl = document.getElementById("score");
-const gameOverEl = document.getElementById("game-over");
-const restartBtn = document.getElementById("restart");
+const field = document.querySelector(".fotball-div");
+const ball = field.querySelector("img");
 
-let isJumping = false;
-let isGameOver = false;
-let score = 0;
-let speed = 6;
-let cactusInterval;
+field.addEventListener("mousemove", (e) => {
+  const fieldRect = field.getBoundingClientRect();
 
-function jump() {
-  if (isJumping) return;
-  isJumping = true;
-  dino.classList.add("jump");
-  setTimeout(() => {
-    dino.classList.remove("jump");
-    isJumping = false;
-  }, 600);
-}
 
-function createCactus() {
-  if (isGameOver) return;
-  const cactus = document.createElement("div");
-  cactus.classList.add("cactus");
-  cactus.style.right = "0px";
-  game.appendChild(cactus);
+  let x = e.clientX - fieldRect.left - ball.clientWidth / 2;
+  let y = e.clientY - fieldRect.top - ball.clientHeight / 2;
 
-  const moveCactus = setInterval(() => {
-    if (isGameOver) {
-      clearInterval(moveCactus);
-      return;
-    }
+  x = Math.max(0, Math.min(x, field.clientWidth - ball.clientWidth));
+  y = Math.max(0, Math.min(y, field.clientHeight - ball.clientHeight));
 
-    let right = parseInt(cactus.style.right);
-    right += speed;
-    cactus.style.right = right + "px";
-
-    const dinoRect = dino.getBoundingClientRect();
-    const cactusRect = cactus.getBoundingClientRect();
-
-    if (
-      cactusRect.left < dinoRect.right &&
-      cactusRect.right > dinoRect.left &&
-      cactusRect.top < dinoRect.bottom &&
-      cactusRect.bottom > dinoRect.top
-    ) {
-      gameOver();
-    }
-
-    if (right > window.innerWidth + 50) {
-      cactus.remove();
-      clearInterval(moveCactus);
-      score++;
-      updateScore();
-    }
-  }, 20);
-}
-
-// это ускорение
-function updateScore() {
-  scoreEl.textContent = String(score).padStart(5, "0");
-  if (score % 1 === 0 && score > 0) {
-    speed += 30;
-  }
-}
-
-// конец
-function gameOver() {
-  isGameOver = true;
-  gameOverEl.style.display = "block";
-  clearInterval(cactusInterval);
-}
-
-// рестарт
-function restart() {
-  isGameOver = false;
-  isJumping = false;
-  score = 0;
-  speed = 6;
-  updateScore();
-  gameOverEl.style.display = "none";
-
-  // кикаем кактусы
-  document.querySelectorAll(".cactus").forEach((c) => c.remove());
-  cactusInterval = setInterval(createCactus, 1500 - Math.min(score * 2, 800));
-}
-
-// Управление
-document.addEventListener("keydown", (e) => {
-  if (e.code === "Space" || e.code === "ArrowUp") {
-    e.preventDefault();
-    if (isGameOver) {
-      restart();
-    } else {
-      jump();
-    }
-  }
+  ball.style.position = "absolute";
+  ball.style.left = x + "px";
+  ball.style.top = y + "px";
 });
-
-restartBtn.addEventListener("click", restart);
-
-restart();

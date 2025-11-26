@@ -41,6 +41,18 @@ li {
 
   margin-top: 36px;
 }
+.fotball-div {
+  position: relative;
+  overflow: hidden;
+}
+
+.fotball-div img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  transition: 0.05s linear;
+  pointer-events: none; /* щоб курсор не чіпляв м'яч */
+}
 
 #game {
   position: relative;
@@ -105,7 +117,7 @@ li {
     cursor: pointer;
   }
   height: 200px;
-  border-bottom: 2px solid #535353;
+
   overflow: hidden;
 }
 #dino {
