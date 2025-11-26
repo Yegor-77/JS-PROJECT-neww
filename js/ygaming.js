@@ -1,10 +1,39 @@
-const moveCactus = setInterval(() => {
+const dino = document.getElementById("dino");
+const game = document.getElementById("game");
+const scoreEl = document.getElementById("score");
+const gameOverEl = document.getElementById("game-over");
+const restartBtn = document.getElementById("restart");
+
+let isJumping = false;
+let isGameOver = false;
+let score = 0;
+let speed = 6;
+let cactusInterval;
+
+function jump() {
+  if (isJumping) return;
+  isJumping = true;
+  dino.classList.add("jump");
+  setTimeout(() => {
+    dino.classList.remove("jump");
+    isJumping = false;
+  }, 600);
+}
+
+function createCactus() {
+  if (isGameOver) return;
+  const cactus = document.createElement("div");
+  cactus.classList.add("cactus");
+  cactus.style.right = "0px";
+  game.appendChild(cactus);
+
+  const moveCactus = setInterval(() => {
     if (isGameOver) {
       clearInterval(moveCactus);
       return;
     }
 
-    let right = parseInt(cactus.style.right)  0;
+    let right = parseInt(cactus.style.right);
     right += speed;
     cactus.style.right = right + "px";
 
@@ -60,7 +89,7 @@ function restart() {
 
 // Управление
 document.addEventListener("keydown", (e) => {
-  if (e.code === "Space"  e.code === "ArrowUp") {
+  if (e.code === "Space" || e.code === "ArrowUp") {
     e.preventDefault();
     if (isGameOver) {
       restart();
@@ -72,5 +101,4 @@ document.addEventListener("keydown", (e) => {
 
 restartBtn.addEventListener("click", restart);
 
-// старт
 restart();
