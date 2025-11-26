@@ -1,54 +1,76 @@
-const resultText = document.getElementById("resultText");
-const computerBtn = document.getElementById("computerChoiceBtn");
-
-const compScoreEl = document.getElementById("compScore");
-const userScoreEl = document.getElementById("userScore");
-
-let userScore = 0;
-let compScore = 0;
-
-const choices = ["rock", "scissors", "paper"];
-
-function getComputerChoice() {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
-
-function getWinner(user, computer) {
-  if (user === computer) return "draw";
-
-  if (
-    (user === "rock" && computer === "scissors") ||
-    (user === "scissors" && computer === "paper") ||
-    (user === "paper" && computer === "rock")
-  ) {
-    return "user";
-  }
-  return "computer";
-}
-
-document.querySelectorAll(".rps-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const userChoice = btn.dataset.choice;
-    const computerChoice = getComputerChoice();
-
-    const winner = getWinner(userChoice, computerChoice);
-
-    computerBtn.textContent = "Комп’ютер: " + computerChoice;
-
-    if (winner === "user") {
-      resultText.textContent = "Ви виграли раунд!";
-      resultText.style.color = "green";
-      userScore++;
-    } else if (winner === "computer") {
-      resultText.textContent = "Комп’ютер виграв!";
-      resultText.style.color = "red";
-      compScore++;
-    } else {
-      resultText.textContent = "Нічия!";
-      resultText.style.color = "black";
+const moveCactus = setInterval(() => {
+    if (isGameOver) {
+      clearInterval(moveCactus);
+      return;
     }
 
-    userScoreEl.textContent = userScore;
-    compScoreEl.textContent = compScore;
-  });
+    let right = parseInt(cactus.style.right)  0;
+    right += speed;
+    cactus.style.right = right + "px";
+
+    const dinoRect = dino.getBoundingClientRect();
+    const cactusRect = cactus.getBoundingClientRect();
+
+    if (
+      cactusRect.left < dinoRect.right &&
+      cactusRect.right > dinoRect.left &&
+      cactusRect.top < dinoRect.bottom &&
+      cactusRect.bottom > dinoRect.top
+    ) {
+      gameOver();
+    }
+
+    if (right > window.innerWidth + 50) {
+      cactus.remove();
+      clearInterval(moveCactus);
+      score++;
+      updateScore();
+    }
+  }, 20);
+}
+
+// это ускорение
+function updateScore() {
+  scoreEl.textContent = String(score).padStart(5, "0");
+  if (score % 1 === 0 && score > 0) {
+    speed += 30;
+  }
+}
+
+// конец
+function gameOver() {
+  isGameOver = true;
+  gameOverEl.style.display = "block";
+  clearInterval(cactusInterval);
+}
+
+// рестарт
+function restart() {
+  isGameOver = false;
+  isJumping = false;
+  score = 0;
+  speed = 6;
+  updateScore();
+  gameOverEl.style.display = "none";
+
+  // кикаем кактусы
+  document.querySelectorAll(".cactus").forEach((c) => c.remove());
+  cactusInterval = setInterval(createCactus, 1500 - Math.min(score * 2, 800));
+}
+
+// Управление
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Space"  e.code === "ArrowUp") {
+    e.preventDefault();
+    if (isGameOver) {
+      restart();
+    } else {
+      jump();
+    }
+  }
 });
+
+restartBtn.addEventListener("click", restart);
+
+// старт
+restart();

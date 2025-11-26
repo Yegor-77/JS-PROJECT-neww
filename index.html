@@ -31,41 +31,50 @@
     </header>
 
     <main class="main">
-      <section class="visokosniy">
-        <div class="container">
+      <div class="container cont-main">
+        <section class="visokosniy">
           <h1 class="popular-text">Популярні інетрактивні ігри</h1>
           <h2 class="visokosniy-text">Перевір в який рік ти народився</h2>
           <input class="random-input" type="number" />
-          <button class="visokosniy-button"></button>
+          <button class="visokosniy-button">
+            <img src="./img/ellipse.svg" alt="look" />
+          </button>
           <p class="visokosniy-p"></p>
-        </div>
-      </section>
+        </section>
 
-      <section class="num-random-section">
-        <div class="container">
+        <section class="num-random-section">
           <h2 class="random-text">Вгадай число, яке загадав комп’ютер</h2>
-          <input class="random-input" type="number" />
-          <button type="button" class="random-button">Введіть число</button>
+          <input class="guess-input random-input" type="number" />
+          <button type="button" class="guess-button visokosniy-button">
+            <img src="./img/ellipse.svg" alt="look" />
+          </button>
 
-          <p class="result-random"></p>
-        </div>
-      </section>
+          <p class="guess-result"></p>
+        </section>
 
-      <section class="main-section-game">
-        <div class="container">
+        <section class="main-section-game">
           <h2 class="game-title">Камінь - ножиці - папір</h2>
 
           <div class="rps-container">
-            <button class="rps-btn" data-choice="rock">
-              <img src="rock.svg" alt="rock" />
+            <button class="rps-btn">
+              <img
+                src="https://th.bing.com/th/id/OIP._4Jr0R1_2vCvrRSx6_-egQHaE5?w=254&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
+                alt="rock"
+              />
             </button>
 
-            <button class="rps-btn" data-choice="scissors">
-              <img src="scissors.svg" alt="scissors" />
+            <button class="rps-btn">
+              <img
+                src="https://th.bing.com/th/id/OIP.6kqq0UbjPn-jZdoyrf1CeAHaHa?w=202&h=203&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
+                alt="scissors"
+              />
             </button>
 
-            <button class="rps-btn" data-choice="paper">
-              <img src="paper.svg" alt="paper" />
+            <button class="rps-btn">
+              <img
+                src="https://th.bing.com/th/id/OIP.8TF9h5Xg8m5gjTckacBIjAHaE9?w=254&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
+                alt="paper"
+              />
             </button>
           </div>
 
@@ -80,45 +89,44 @@
             <p>Комп’ютер - <span id="compScore">0</span></p>
             <p>Ви - <span id="userScore">0</span></p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="calc">
-        <div class="container">
+        <section class="calc">
           <h2 class="hhtext">Калькулятор</h2>
 
-          <input type="number" id="num1" placeholder="Введіть число" />
+          <div class="wrap-calc">
+            <input type="number" id="num1" placeholder="Введіть число" />
 
-          <div class="buttonss">
-            <button class="znak">+</button>
-            <button class="znak">-</button>
-            <button class="znak">*</button>
-            <button class="znak">/</button>
+            <div class="buttonss">
+              <button class="znak">+</button>
+              <button class="znak">-</button>
+              <button class="znak">*</button>
+              <button class="znak">/</button>
+            </div>
+
+            <input type="number" id="num2" placeholder="Введіть число" />
+            <button class="znak" id="equal">=</button>
+            <input type="text" id="result" placeholder="Результат" readonly />
           </div>
+        </section>
 
-          <input type="number" id="num2" placeholder="Введіть число" />
-          <button id="equal">=</button>
-          <input type="text" id="result" placeholder="Результат" readonly />
-        </div>
-      </section>
-
-      <section class="calc-timer">
-        <div class="container">
+        <section class="calc-timer">
           <h2 class="chill-calc">Калькулятор часу</h2>
 
           <input
+            class="mn-input"
             type="number"
             id="timecalc-input"
             placeholder="Введіть хвилини"
           />
-          <button id="timecalc-btn">Обчислити</button>
+          <button class="visokosniy-button" id="timecalc-btn">
+            <img src="./img/ellipse.svg" alt="elipse" />
+          </button>
 
           <p id="timecalc-result" class="timecalc-result">0 : 00</p>
-        </div>
-      </section>
+        </section>
 
-      <section id="game">
-        <div class="container">
+        <section id="game">
           <div id="dino"></div>
           <div id="ground"></div>
           <div id="score">00000</div>
@@ -126,96 +134,86 @@
             <div>Кiнець гри</div>
             <button id="restart">Почати заново</button>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="Footbal-section">
-        <div class="container">
+        <section class="Footbal-section">
           <h3 class="fotball-text">Футбол</h3>
 
           <div class="fotball-div">
             <img src="./img/football-one.svg" alt="fotball" />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="team-section">
-        <div class="container">
-          <section class="team-section">
-            <h2>Наша команда</h2>
-            <div class="team-slider">
-              <button class="arrow left">&#10094;</button>
-              <div class="team-member-slider">
-                <div class="team-member" data-author="Даня">
-                  <img
-                    class="member-photo"
-                    src="https://th.bing.com/th/id/OIP.1VS6PtzkvecdtSci6YpI8AHaIB?w=166&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
-                    alt="cattt"
-                  />
+        <section class="team-section">
+          <h2>Наша команда</h2>
+          <div class="team-slider">
+            <button class="arrow left">&#10094;</button>
+            <div class="team-member-slider">
+              <div class="team-member" data-author="Даня">
+                <img class="member-photo" src="./img/john.jpg  " alt="cattt" />
 
-                  <h3>Ім’я студента — Даня</h3>
-                  <p>Даня зробив більше половини HTML та JS.</p>
-                </div>
-                <div class="team-member" data-author="Єгор">
-                  <img
-                    class="member-photo"
-                    src="https://i.pinimg.com/736x/e6/48/67/e6486796aa5958de626c7931d0921c25.jpg"
-                    alt="cattt"
-                  />
-
-                  <h3>Ім’я студента — Єгор</h3>
-                  <p>Єгор доделав все і зробив нормальний CSS.</p>
-                </div>
+                <h3>Ім’я студента — Даня</h3>
+                <p>Даня зробив більше половини HTML та JS.</p>
               </div>
-              <button class="arrow right">&#10095;</button>
+              <div class="team-member" data-author="Єгор">
+                <img
+                  class="member-photo"
+                  src=" https://th.bing.com/th/id/OIP.1VS6PtzkvecdtSci6YpI8AHaIB?w=166&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
+                  alt="cattt"
+                />
+
+                <h3>Ім’я студента — Єгор</h3>
+                <p>Єгор доделав все і зробив нормальний CSS.</p>
+              </div>
             </div>
+            <button class="arrow right">&#10095;</button>
+          </div>
 
-            <div class="dots">
-              <span class="dot active" data-index="0"></span>
-              <span class="dot" data-index="1"></span>
-              <span class="dot" data-index="2"></span>
-              <span class="dot" data-index="3"></span>
-            </div>
-          </section>
-        </div>
-      </section>
+          <div class="dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+          </div>
+        </section>
 
-      <section class="choose-scientist" id="choose-scientist">
-        <h2 class="section-title">Обери вченого/их</h2>
+        <section class="choose-scientist" id="choose-scientist">
+          <h2 class="section-title">Обери вченого/их</h2>
 
-        <div class="scientists"></div>
+          <div class="scientists"></div>
 
-        <div class="cs-buttons">
-          <button class="section-btn born-in-19th">
-            Які вчені народилися в 19 ст.
-          </button>
-          <button class="section-btn year-albert">
-            Знайти рік народження Albert Einshtein
-          </button>
-          <button class="section-btn sort-by-abc">
-            Відсортувати вчених за алфавітом
-          </button>
-          <button class="section-btn surname-c">
-            Знайти вчених, прізвища яких починаються на на літеру “С”
-          </button>
-          <button class="section-btn sort-by-age">
-            Відсортувати вчених за кількістю прожитих років
-          </button>
-          <button class="section-btn name-a">
-            Знайти всіх вчених, ім’я яких починається на “А”
-          </button>
-          <button class="section-btn late-born">
-            Знайти вченого, який народився найпізніше
-          </button>
-          <button class="section-btn long-and-short">
-            Знайти вченого, який прожив найдовше і вченого,<br />
-            який прожив найменше
-          </button>
-          <button class="section-btn coincidence">
-            Знайти вчених, в яких співпадають перші літери імені і прізвища
-          </button>
-        </div>
-      </section>
+          <div class="cs-buttons">
+            <button class="section-btn born-in-19th">
+              Які вчені народилися в 19 ст.
+            </button>
+            <button class="section-btn year-albert">
+              Знайти рік народження Albert Einshtein
+            </button>
+            <button class="section-btn sort-by-abc">
+              Відсортувати вчених за алфавітом
+            </button>
+            <button class="section-btn surname-c">
+              Знайти вчених, прізвища яких починаються на на літеру “С”
+            </button>
+            <button class="section-btn sort-by-age">
+              Відсортувати вчених за кількістю прожитих років
+            </button>
+            <button class="section-btn name-a">
+              Знайти всіх вчених, ім’я яких починається на “А”
+            </button>
+            <button class="section-btn late-born">
+              Знайти вченого, який народився найпізніше
+            </button>
+            <button class="section-btn long-and-short">
+              Знайти вченого, який прожив найдовше і вченого,<br />
+              який прожив найменше
+            </button>
+            <button class="section-btn coincidence">
+              Знайти вчених, в яких співпадають перші літери імені і прізвища
+            </button>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="footer">
@@ -252,10 +250,11 @@
       </div>
     </footer>
     <script src="./visokosniy.js"></script>
-    <script src="./index-Yeasy.js"></script>
+    <script src="./indexeasy.js"></script>
     <script src="./kalkylator.js"></script>
     <script src="./gaming.js"></script>
     <script src="./genius.js"></script>
     <script src="./ourteam.js"></script>
+    <script src="./gamecut.js"></script>
   </body>
 </html>

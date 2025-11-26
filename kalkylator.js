@@ -10,9 +10,6 @@ buttons.forEach((btn) => {
   });
 });
 
-
-
-
 equalBtn.addEventListener("click", () => {
   const a = parseFloat(num1El.value);
   const b = parseFloat(num2El.value);
@@ -22,12 +19,6 @@ equalBtn.addEventListener("click", () => {
     resultEl.value = "Помилка";
     return;
   }
-
-
-
-
-
-
 
   switch (operator) {
     case "+":
