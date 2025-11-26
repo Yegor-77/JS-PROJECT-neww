@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener("click", () => {
     const value = Number(input.value);
 
-    if ((!value, value < 1, value > 10)) {
+    if (isNaN(value) || value < 1 || value > 10) {
       result.textContent = "Будь ласка, введіть число від 1 до 10!";
       result.style.color = "orange";
       return;
